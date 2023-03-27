@@ -26,13 +26,13 @@ public class CityListTest {
         assertEquals(2, cityList.getCities(1).size());
         assertTrue(cityList.getCities(1).contains(city));
     }
-
+// i) test delete
     @Test
     public void testDelete(){
         CityList cityList= new CityList();
         City city1=new City("Mirpur","Dhaka");
         cityList.add(city1);
-        City city2=new City("Boyra","Khulna");
+        City city2=new City("teligati","Khulna");
         cityList.add(city2);
 
         assertEquals(2, cityList.getCities(1).size());
@@ -53,7 +53,7 @@ public class CityListTest {
             cityList.add(city);
         });
     }
-
+// ii) test delete exception
     @Test
     public void testDeleteException(){
         CityList cityList = new CityList();
@@ -65,7 +65,7 @@ public class CityListTest {
             cityList.delete(city);
         });
     }
-
+// iii) test sort
     @Test
     public void testGetCities() {
         CityList cityList = new CityList();
@@ -75,22 +75,23 @@ public class CityListTest {
 
         assertEquals(0, city1.compareTo(cityList.getCities(2).get(0)));
 
-        City city2 = new City("Boyra", "Khulna");
+        City city2 = new City("teligati", "Khulna");
         cityList.add(city2);
 
-        assertEquals(0, city2.compareTo(cityList.getCities(1).get(0)));
-        assertEquals(0, city1.compareTo(cityList.getCities(1).get(1)));
+        assertEquals(0, city1.compareTo(cityList.getCities(1).get(0)));
+        assertEquals(0, city2.compareTo(cityList.getCities(1).get(1)));
 
         assertEquals(0, city1.compareTo(cityList.getCities(2).get(0)));
         assertEquals(0, city2.compareTo(cityList.getCities(2).get(1)));
     }
 
+    // iv) test count
     @Test
     public void testCount(){
         CityList cityList= new CityList();
         City city1=new City("Mirpur","Dhaka");
         cityList.add(city1);
-        City city2=new City("Boyra","Khulna");
+        City city2=new City("teligati","Khulna");
         cityList.add(city2);
 
         assertEquals(2, cityList.count());

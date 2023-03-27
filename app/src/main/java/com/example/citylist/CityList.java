@@ -22,7 +22,7 @@ public class CityList {
         }
         cities.add(city);
     }
-
+// i) delete city
     /**
      * This deletes a city to the list if that city exists
      * @param city
@@ -34,7 +34,7 @@ public class CityList {
         }
         cities.remove(city);
     }
-
+// iii) modified getCities
     /**
      * This returns a sorted list of cities
      * @return
@@ -48,8 +48,8 @@ public class CityList {
         else{
             Collections.sort(cityList, new Comparator<City>() {
                 @Override
-                public int compare(City city, City t1) {
-                    return city.getProvinceName().compareTo(t1.getProvinceName());
+                public int compare(City city1, City city2) {
+                    return city1.getProvinceName().compareTo(city2.getProvinceName());
                 }
             });
         }
@@ -57,6 +57,7 @@ public class CityList {
         return cityList;
     }
 
+    // ii) Count
     /**
      * This is the total no. of cities
      * @return
